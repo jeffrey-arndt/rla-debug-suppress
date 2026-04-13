@@ -1,0 +1,26 @@
+_format_version: "3.0"
+
+services:
+  - name: echo
+    url: http://httpbin.konghq.com
+    routes:
+      - name: echo-route
+        paths:
+          - /
+    plugins:
+      - name: rate-limiting-advanced
+        config:
+          limit: [10000]
+          window_size: [60]
+          window_type: fixed
+          strategy: redis
+          sync_rate: 0.5
+          identifier: ip
+          namespace: repro
+          redis:
+            host: redis
+            port: 6379
+            database: 0
+            connect_timeout: 2000
+            send_timeout: 2000
+            read_timeout: 2000
