@@ -11,10 +11,10 @@ other debug output untouched.
 
 - **Demonstration only.** This is a reference for the technique. It is
   not a drop-in fix. You must build, test, and support your own version.
-- **Version.** Tested on Kong Gateway **3.10.0.10**. You are on an
-  unsupported 3.5.X.X build. The mechanism should carry over, but the
-  bundled nginx template layout can differ between versions; re-verify
-  before relying on it.
+- **Version.** Tested on Kong Gateway **3.10.0.10**. The mechanism
+  should carry over to other 3.x versions, but the bundled nginx
+  template layout can differ between versions; re-verify before
+  relying on it.
 - **Not officially supported.** This is a local customization of a
   stock plugin's logging. Kong Support is not obligated to support it.
 - **Not load-tested.** The `ngx.log` wrapper adds a Lua substring scan
